@@ -28,7 +28,7 @@ enviromentを追加します。
 version: '3'
 services:
   yomiage_voicevox:
-    container_name: owqhjowrhwqe-yomiage_voicevox
+    container_name: yomiage_voicevox
     build: 
       context: .
       dockerfile: Dockerfile
