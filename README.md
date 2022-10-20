@@ -1,0 +1,2 @@
+# cevigo-voicevoxapi
+cevigoを使ってyomiage_botで使えるvoicevoxapiを雑に実装する
