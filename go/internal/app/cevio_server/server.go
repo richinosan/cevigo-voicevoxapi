@@ -104,15 +104,7 @@ func (s *cevioServer) synthesis(w http.ResponseWriter, r *http.Request) {
 }
 func (s *cevioServer) audio_query(w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()
-	query := &cevioParams{
-		Text:            r.Form.Get("text"),
-		SpeedScale:      1,
-		PitchScale:      0,
-		IntonationScale: 1,
-		VolumeScale:     1,
-	}
-	js, _ := json.Marshal(query)
-	fmt.Fprint(w, string(js))
+	fmt.Fprint(w, `{"id":0,"text":"`+r.Form.Get("text")+`","speedScale":1.0,"pitchScale":0.0,"intonationScale":1.0,"volumeScale":1.0}`)
 }
 
 func (s *cevioServer) applyParameters(p *cevioParams) error {
@@ -154,7 +146,7 @@ func (s *cevioServer) speak(text string) ([]byte, error) {
 		return nil, err
 	}
 	if !b {
-		return nil, fmt.Errorf("failed to outputting wav, please check the packet you sent")
+		return nil, fmt.Errorf("failed to outputting wav, please check the packet you sent\n error string: %v", text)
 	}
 	defer os.Remove(fPath)
 	if err != nil {

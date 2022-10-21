@@ -54,3 +54,9 @@ services:
     entrypoint: "python3 /yomiage_VOICEVOX/discordbot.py"
 ```
 
+## 更新履歴
+### v1.1
+  - Audioqueryをより一般的なvoicevoxapi用に修正(jsonのMarshalじゃなくして出力を直書きすることで他のvoicevoxapiに準じた)
+
+### v1.0
+  - githubにアップ
