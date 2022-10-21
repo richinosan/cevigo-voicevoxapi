@@ -4,7 +4,7 @@ by Richinosan
 
 ## 概要
 
-[cevigo](https://github.com/gotti/cevigo)を使って[Docker版yomiage_bot](https://github.com/richinosan/yomiage_VOICEVOX_verT-Docker)で使えるvoicevoxapiを雑に実装します。ちょっと強引な方法で実装しているので他環境だと使いにくいかも。
+[cevigo](https://github.com/gotti/cevigo)を使って[Docker版yomiage-VOICEVOX](https://github.com/richinosan/yomiage_VOICEVOX_verT-Docker)および[yomiage-VOICEVOX-VerT(pythonコードをいじる必要あり)](https://github.com/TaktstockJp/yomiage_VOICEVOX_verT)で使えるvoicevoxapiを雑に実装します。ちょっと強引な方法で実装しているので他環境だと使いにくいかも。
 
 ## 起動方法とコマンドライン引数
 ReleaseからDLしたZIPファイルを解凍し、main.exeと同じディレクトリにあるstart.batを起動してください。
@@ -52,6 +52,19 @@ services:
       OTHER_VOICEVOX_APP: "Cevio,CevioAI"
       OTHER_VOICEVOX_PORT: "10001,10002"
     entrypoint: "python3 /yomiage_VOICEVOX/discordbot.py"
+```
+
+## yomiage-VOICEVOX-VerTでのpython追記部分
+下記に追加
+
+第一引数はサービス名(任意の名称)を入力、第二引数はポート番号を入力
+
+for_developer/discordbot_functions.py
+```python
+class room_information():
+  async def reload(self):
+    self.createVoiceVoxGenerator('Cevio', '10001')
+    self.createVoiceVoxGenerator('CevioAI', '10002')
 ```
 
 ## 更新履歴
