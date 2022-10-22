@@ -9,6 +9,8 @@ by Richinosan
 ## 起動方法とコマンドライン引数
 ReleaseからDLしたZIPファイルを解凍し、main.exeと同じディレクトリにあるstart.batを起動してください。
 
+**<span style="color: red; ">実行時に対象となるCevio CSまたはCevioAIを起動している必要があります</span>**
+
 ### batの中身
 ```bat
 start /b main.exe -api cevio  -port 10001
