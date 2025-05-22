@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/richinosan/cevigo-voicevoxapi/pkg/app/cevio_server"
+	"github.com/richinosan/cevigo-voicevoxapi/pkg/cevio_server"
 )
 
 func main() {
