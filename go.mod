@@ -4,7 +4,7 @@ go 1.24.1
 
 require (
 	github.com/gotti/cevigo v0.0.0-20220222162533-6e9cbc73fb49
-	github.com/spf13/pflag v1.0.6
+	github.com/spf13/pflag v1.0.7
 )
 
 require (
